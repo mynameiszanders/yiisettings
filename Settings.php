@@ -23,7 +23,7 @@
      *
      * @author  Zander Baldwin <mynameiszanders@gmail.com>
      * @license MIT/X11 <http://j.mp/mit-license>
-     * @version 0.1
+     * @version 0.2
      * @link    https://github.com/mynameiszanders/yiisettings
      */
     abstract class Settings extends CApplicationComponent

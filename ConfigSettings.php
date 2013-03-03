@@ -6,10 +6,10 @@
     /**
      * Configuration Settings Extension for Yii Framework
      *
-     * Description...
-     *
      * @author  Zander Baldwin <mynameiszanders@gmail.com>
      * @license MIT/X11 <http://j.mp/mit-license>
+     * @version 0.1
+     * @link    https://github.com/mynameiszanders/yiisettings
      */
     class ConfigSettings extends Settings implements ISettings
     {

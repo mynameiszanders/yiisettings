@@ -6,10 +6,25 @@
     /**
      * Settings Extension for Yii Framework
      *
-     * Description...
+     * A simple extension for setting and retrieving key/value pairs to use as application settings. Each class
+     * implements the methods get(), set(), and delete() at a minimum. This abstract class allows each class extending
+     * this to cache all key/value pair settings for subsequent requests.
+     *
+     * To use this extension, I suggest placing all files inside the directory given by the alias
+     * "application.extensions.Settings", and then load the desired class as an application component. The following is
+     * an example of this with all available options:
+     *
+     * 'settings' => array(
+     *     'class'          => 'application.extensions.Settings.ConfigSettings',
+     *     'cacheComponent' => 'cache',
+     *     'cacheId'        => 'settingsCache',
+     *     'cacheTimeout'   => 3600,
+     * ),
      *
      * @author  Zander Baldwin <mynameiszanders@gmail.com>
      * @license MIT/X11 <http://j.mp/mit-license>
+     * @version 0.1
+     * @link    https://github.com/mynameiszanders/yiisettings
      */
     abstract class Settings extends CApplicationComponent
     {

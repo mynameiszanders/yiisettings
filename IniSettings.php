@@ -4,14 +4,14 @@
     Yii::import('application.extensions.Settings.*');
 
     /**
-     * Configuration Settings Extension for Yii Framework
+     * INI Settings Extension for Yii Framework
      *
      * @author  Zander Baldwin <mynameiszanders@gmail.com>
      * @license MIT/X11 <http://j.mp/mit-license>
      * @version 0.2
      * @link    https://github.com/mynameiszanders/yiisettings
      */
-    class ConfigSettings extends Settings implements ISettings
+    class IniSettings extends Settings
     {
 
         /**
@@ -62,6 +62,7 @@
             );
         }
 
+
         /**
          * Delete Setting
          *
@@ -96,6 +97,7 @@
             );
         }
 
+
         /**
          * Load Category
          *
@@ -105,7 +107,7 @@
          */
         protected function load($category)
         {
-            if(!$this->split($category)) {
+            if(!is_string($category) || !$this->split($category)) {
                 throw new CException(
                     Yii::t(
                         'settingsext',
@@ -122,13 +124,13 @@
                 $category_file = Yii::getPathOfAlias('application.config')
                     . DIRECTORY_SEPARATOR
                     . str_replace('.', DIRECTORY_SEPARATOR, $category)
-                    . '.php';
+                    . '.ini';
                 // If the file does not exist, or it isn't readable, return false as we can't access the settings.
                 if(!file_exists($category_file) || !is_readable($category_file)) {
                     return false;
                 }
                 // Include the configuration file in an attempt to load the settings.
-                $settings = require $category_file;
+                $settings = parse_ini_file($category_file);
                 if(!is_array($settings)) {
                     throw new CException(
                         Yii::t(

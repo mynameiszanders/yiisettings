@@ -8,7 +8,7 @@
      *
      * @author  Zander Baldwin <mynameiszanders@gmail.com>
      * @license MIT/X11 <http://j.mp/mit-license>
-     * @version 0.3
+     * @version 0.3.1
      * @link    https://github.com/mynameiszanders/yiisettings
      */
     class IniSettings extends Settings
